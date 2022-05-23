@@ -4797,25 +4797,6 @@
             display: block;
         }
 
-        .navbar {
-            position: relative;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            padding: 0.5rem 1rem;
-        }
-
-        .navbar &gt;
-        .container,
-        .navbar &gt;
 
         .container-fluid {
             display: -webkit-box;
@@ -11132,13 +11113,15 @@
                             <p>Do what you like. Love what you do</p>
                         </div>
 
-                        <div class="profile-card-ctr"><button class="profile-card__button button--blue js-message-btn"
-                                href="https://www.facebook.com/messages/t/QuocNNghia"><i
-                                    class="fab fa-facebook-messenger">Messenger</i></button><i
-                                class="fab fa-facebook-messenger"><button class="profile-card__button button--orange"
-                                    href="https://www.facebook.com/QuocNNghia"><i
-                                        class="fab fa-facebook">Facebook</i></button><i class="fab fa-facebook">
-                                </i></i></div>
+                        <div class="profile-card-ctr"><button
+                                class="profile-card__button button--blue js-message-btn"><a
+                                    href="https://www.facebook.com/messages/t/QuocNNghia"><i
+                                        class="fab fa-facebook-messenger">Messenger</i></a></button>
+                            <i class="fab fa-facebook-messenger"><button class="profile-card__button button--orange"><a
+                                        href="https://www.facebook.com/QuocNNghia"><i
+                                            class="fab fa-facebook">Facebook</i></a></button><i class="fab fa-facebook">
+                                </i></i>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -11157,7 +11140,7 @@
                         display: flex;
 
                         display: flex;
-                        background-image: linear-gradient(-20deg, #b6493e 0%, #b54264 100%);
+                        background-image: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
                     }
                 </style>
                 <style type="text/css">
@@ -12863,11 +12846,249 @@
             </i></i></p>
 
     <div class="no-items section" id="b"><i class="fab fa-facebook-messenger"><i class="fab fa-facebook">
+                <!-- load -->
+                <div id='loader'>
+                    <div class='spinner'>
+                        <div class='spinner-inner'></div>
+                    </div>
+                </div>
+                <script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
                 <script type='text/javascript'>
+                    $(window).load(function () {
+                        setTimeout(function () {
+                            $(".spinner").fadeOut("slow");
+                            setTimeout(function () {
+                                $("#loader").fadeOut("slow")
+                            }, 1000)
+                        }, 1000)
+                    });
+                </script>
+                <style>
+                    #loader {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background: linear-gradient(-20deg, #ff2846 0%, #6944ff 100%);
+                        z-index: 1000
+                    }
+
+                    .spinner {
+                        position: fixed;
+                        width: 100%;
+                        top: 70%;
+                        height: 30px;
+                        text-align: center;
+                        font-size: 10px
+                    }
+
+                    .spinner,
+                    .spinner-inner {
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        border: 9px solid white;
+                        border-color: transparent white;
+                        margin: auto
+                    }
+
+                    .spinner {
+                        width: 85px;
+                        height: 85px;
+                        -webkit-animation: spin 2.2s linear 0s infinite normal;
+                        -moz-animation: spin 2.2s linear 0s infinite normal;
+                        animation: spin 2.2s linear 0s infinite normal
+                    }
+
+                    .spinner-inner {
+                        width: 40px;
+                        height: 40px;
+                        -webkit-animation: spinback 1.2s linear 0s infinite normal;
+                        -moz-animation: spinback 1.2s linear 0s infinite normal;
+                        animation: spinback 1.2s linear 0s infinite normal
+                    }
+
+                    @-webkit-keyframes spin {
+                        from {
+                            -webkit-transform: rotate(0)
+                        }
+
+                        to {
+                            -webkit-transform: rotate(360deg)
+                        }
+                    }
+
+                    @-moz-keyframes spin {
+                        from {
+                            -moz-transform: rotate(0)
+                        }
+
+                        to {
+                            -moz-transform: rotate(360deg)
+                        }
+                    }
+
+                    @keyframes spin {
+                        from {
+                            transform: rotate(0)
+                        }
+
+                        to {
+                            transform: rotate(360deg)
+                        }
+                    }
+
+                    @-webkit-keyframes spinback {
+                        from {
+                            -webkit-transform: rotate(0)
+                        }
+
+                        to {
+                            -webkit-transform: rotate(-360deg)
+                        }
+                    }
+
+                    @-moz-keyframes spinback {
+                        from {
+                            -moz-transform: rotate(0)
+                        }
+
+                        to {
+                            -moz-transform: rotate(-360deg)
+                        }
+                    }
+
+                    @keyframes spinback {
+                        from {
+                            transform: rotate(0)
+                        }
+
+                        to {
+                            transform: rotate(-360deg)
+                        }
+                    }
+                </style>
+                <!-- end load -->
+                <script type='text/javascript'>
+
                     //<![CDATA[
                     !function (e, t, a) { function n() { c(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), o(), r() } function r() { for (var e = 0; e < d.length; e++)d[e].alpha <= 0 ? (t.body.removeChild(d[e].el), d.splice(e, 1)) : (d[e].y--, d[e].scale += .004, d[e].alpha -= .013, d[e].el.style.cssText = "left:" + d[e].x + "px;top:" + d[e].y + "px;opacity:" + d[e].alpha + ";transform:scale(" + d[e].scale + "," + d[e].scale + ") rotate(45deg);background:" + d[e].color + ";z-index:99999"); requestAnimationFrame(r) } function o() { var t = "function" == typeof e.onclick && e.onclick; e.onclick = function (e) { t && t(), i(e) } } function i(e) { var a = t.createElement("div"); a.className = "heart", d.push({ el: a, x: e.clientX - 5, y: e.clientY - 5, scale: 1, alpha: 1, color: s() }), t.body.appendChild(a) } function c(e) { var a = t.createElement("style"); a.type = "text/css"; try { a.appendChild(t.createTextNode(e)) } catch (t) { a.styleSheet.cssText = e } t.getElementsByTagName("head")[0].appendChild(a) } function s() { return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")" } var d = []; e.requestAnimationFrame = function () { return e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) { setTimeout(e, 1e3 / 60) } }(), n() }(window, document);
 //]]>
                 </script>
+                <script type='text/javascript'>
+        /*<![CDATA[*/
+        // Số bông tuyết (Không khuyến khích nhiều hơn 30-40)
+        var snowmax = 40
+        // Tùy chọn màu sắc cho tuyết, có thể nhiều màu khác nhau như bên dưới
+        var snowcolor = new Array("#aaaacc", "#ddddff", "#ccccdd", "#f3f3f3", "#f0ffff")
+        // Thiết lập font chữ để tạo ra tuyết, vì các font chữ khác nhau thì hình dạng dấu * cũng khác nhau
+        var snowtype = new Array("Times", "Arial", "Times", "Verdana")
+        // Thiết lập ký tự tạo ra tuyết (Khuyến khích: *)
+        var snowletter = "*"
+        // Thiết lập tốc độ rơi xuống (Đề nghị trong khoảng 0.3-2)
+        var sinkspeed = 0.6
+        // Kích thước tối đa của bông tuyết
+        var snowmaxsize = 50
+        // Kích thước tối thiểu của bông tuyết
+        var snowminsize = 8
+        // Thiết lập vùng tuyết rơi
+        // 1 cho toàn bộ trang web, 2 cho phần bên trái
+        // 3 cho phần trung tâm, 4 cho phần bên phải
+        var snowingzone = 1
+        // Không được chỉnh code ở bên dưới
+        var snow = new Array()
+        var marginbottom
+        var marginright
+        var timer
+        var i_snow = 0
+        var x_mv = new Array();
+        var crds = new Array();
+        var lftrght = new Array();
+        var browserinfos = navigator.userAgent
+        var ie5 = document.all && document.getElementById && !browserinfos.match(/Opera/)
+        var ns6 = document.getElementById && !document.all
+        var opera = browserinfos.match(/Opera/)
+        var browserok = ie5 || ns6 || opera
+
+        function randommaker(range) {
+            rand = Math.floor(range * Math.random())
+            return rand
+        }
+
+        function initsnow() {
+            if (ie5 || opera) {
+                marginbottom = document.body.scrollHeight
+                marginright = document.body.clientWidth - 15
+            } else if (ns6) {
+                marginbottom = document.body.scrollHeight
+                marginright = window.innerWidth - 15
+            }
+            var snowsizerange = snowmaxsize - snowminsize
+            for (i = 0; i <= snowmax; i++) {
+                crds[i] = 0;
+                lftrght[i] = Math.random() * 15;
+                x_mv[i] = 0.03 + Math.random() / 10;
+                snow[i] = document.getElementById("s" + i)
+                snow[i].style.fontFamily = snowtype[randommaker(snowtype.length)]
+                snow[i].size = randommaker(snowsizerange) + snowminsize
+                snow[i].style.fontSize = snow[i].size + 'px';
+                snow[i].style.color = snowcolor[randommaker(snowcolor.length)]
+                snow[i].style.zIndex = 1000
+                snow[i].sink = sinkspeed * snow[i].size / 5
+                if (snowingzone == 1) {
+                    snow[i].posx = randommaker(marginright - snow[i].size)
+                }
+                if (snowingzone == 2) {
+                    snow[i].posx = randommaker(marginright / 2 - snow[i].size)
+                }
+                if (snowingzone == 3) {
+                    snow[i].posx = randommaker(marginright / 2 - snow[i].size) + marginright / 4
+                }
+                if (snowingzone == 4) {
+                    snow[i].posx = randommaker(marginright / 2 - snow[i].size) + marginright / 2
+                }
+                snow[i].posy = randommaker(2 * marginbottom - marginbottom - 2 * snow[i].size)
+                snow[i].style.left = snow[i].posx + 'px';
+                snow[i].style.top = snow[i].posy + 'px';
+            }
+            movesnow()
+        }
+
+        function movesnow() {
+            for (i = 0; i <= snowmax; i++) {
+                crds[i] += x_mv[i];
+                snow[i].posy += snow[i].sink
+                snow[i].style.left = snow[i].posx + lftrght[i] * Math.sin(crds[i]) + 'px';
+                snow[i].style.top = snow[i].posy + 'px';
+                if (snow[i].posy >= marginbottom - 2 * snow[i].size || parseInt(snow[i].style.left) > (marginright - 3 * lftrght[i])) {
+                    if (snowingzone == 1) {
+                        snow[i].posx = randommaker(marginright - snow[i].size)
+                    }
+                    if (snowingzone == 2) {
+                        snow[i].posx = randommaker(marginright / 2 - snow[i].size)
+                    }
+                    if (snowingzone == 3) {
+                        snow[i].posx = randommaker(marginright / 2 - snow[i].size) + marginright / 4
+                    }
+                    if (snowingzone == 4) {
+                        snow[i].posx = randommaker(marginright / 2 - snow[i].size) + marginright / 2
+                    }
+                    snow[i].posy = 0
+                }
+            }
+            var timer = setTimeout("movesnow()", 50)
+        }
+        for (i = 0; i <= snowmax; i++) {
+            document.write("<span id='s" + i + "' style='position:absolute;top:-" + snowmaxsize + "'>" + snowletter + "</span>")
+        }
+        if (browserok) {
+            window.onload = initsnow
+        }
+        //]]>
+    </script>
                 <style type="text/css">
                     html,
                     body {
